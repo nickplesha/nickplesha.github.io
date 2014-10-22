@@ -39,7 +39,7 @@
   <div role="main">
       <div class="sidebar">
           <div class="contact">
-              <h2>Little blog</h2>
+              <h2>nickplesha</h2>
               <p class="description">I'm a developer at <a href="http://www.shoutem.com" target="_blank">Shoutem</a>. <br>This is my blog with some code I find useful.</p>
               
               <div class="social">
@@ -64,7 +64,7 @@
 
                     <p>To break it down how this works: using the <span class="code">required</span> attribute on the input fields allows us to apply styling for the <span class="code">:validstate</span> when the input fields has content. Using a CSS transition we achieve the behaviour we need. We also add styling on <span class="code">:focus</span> to communicate to the user that the field is selected.</p>
 
-                    <p>There are some truly awesome examples of floating labels on the web that inspired me <a href="http://blog.circleci.com/adaptive-placeholders/" target="_blank">like this</a>, with placeholders that move out of the way and feature nice animation, but I've opted for a much simpler approach mainly becaouse of Chrome auto-fill. The problem is that when the browser fills the input field, the placeholder text doesn't move out of the way since the auto-fill doesn't behave the same way as manual input. This makes it hard to use for e.g. login forms.</p>
+                    <p>There are some truly <a href="http://blog.circleci.com/adaptive-placeholders/" target="_blank">awesome examples of floating labels</a> on the web that inspired me, with placeholders that move out of the way and feature nice animation, but I've opted for a much simpler approach mainly because of Chrome auto-fill. The problem is that when the browser fills the input field, the placeholder text doesn't move out of the way since the auto-fill doesn't behave the same way as manual input. This makes it hard to use for e.g. login forms.</p>
 
                     <p>Hopefully, this simple example helps you on your way to including floating labels in your project. To see many more examples, check out this blog post by Matt D. Smith that explains how he came up with the concept and has many links to great implementations: <a href="http://mattdsmith.com/float-label-pattern/" target="_blank">mattdsmith.com/float-label-pattern</a> </p>
               </div>          
@@ -74,7 +74,7 @@
               <div class="post-content">
                   <p>Here's a llitle list of problems I run into on a regular basis when working with Robot Framework for automated UI testing. Specifically, the Selenium2Library that uses Selenium and takes care of test execution in the browser. Finding solutions for these problems wasn't very easy so this might help some of you if you run into the same thing.</p>
                   <h2>Don't try to find the element - wait for it</h2>
-                  <p>Dynamic, single-page web apps have a lot of content - tabs, modals, alerts - hidden from view waiting to be used. This can confuse Selenium as you'll see when it can find elements that you don't even see with Wait until page contains <span class="code">${element}</span>. Instead wait until elements can be seen and interacted with, use <span class="code">Wait Until Element Is Visible ${element}</span>. This way you are certain that Selenium is seeing what you are seeing.</p>
+                  <p>Dynamic, single-page web apps have a lot of content - tabs, modals, alerts - hidden from view waiting to be used. This can confuse Selenium as you'll see when it can find elements that you don't even see with <span class="code">Page Should Contain ${element}</span> or <span class="code">Wait Until Page Contains ${element}</span>. Instead wait until elements can be seen and interacted with, use <span class="code">Wait Until Element Is Visible ${element}</span>. This way you are certain that Selenium is seeing what you are seeing.</p>
                 <h2>StaleElementReference Exception - slow down</h2>
                     <p>This seems like a common issue affecting many people who try writing UI tests for websites with a lot of client-side scripting. One thing you have to have in mind is that the average user is a lot slower when e.g. filling out a form that Selenium which rushes through the page at a very quick pace not giving the interface enough time to properly respond. Using <span class="code">Set Selenium Speed 0.1</span> before the keywords that encounter this error should fix this issue.</p>
                 <h2>PhantomJS support</h2>
