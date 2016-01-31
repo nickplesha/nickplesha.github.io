@@ -22,6 +22,7 @@
 
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/entypo.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
   <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
 
   <!-- All JavaScript at the bottom, except this Modernizr build.
@@ -40,7 +41,7 @@
       <div class="sidebar">
           <div class="contact">
               <h2>nikola pleša</h2>
-              <p class="description">I'm a developer at <a href="http://www.shoutem.com" target="_blank">Shoutem</a>. <br>This is my blog with some code I find useful.</p>
+              <p class="description">I'm the developer behind <a href="https://itunes.apple.com/app/id1059812566" target="_blank">Updraft for Reddit</a> <br>This is my blog with stuff I'm working on.</p>
               
               <div class="social">
                 <a href="mailto:nickplesha@gmail.com" class="email"></a>
@@ -50,8 +51,92 @@
           </div>
       </div>
       <div class="content">
+
+            <div class="post">
+              <h1 class="post-title"><a href="http://nickplesha.github.io/post/updraft.html">Updraft for Reddit</a></h1>
+              <div class="post-date"></div>
+              <div class="post-content">
+                  <p>I'd like to introduce you to a project I've been working on for the past year: <a href="https://itunes.apple.com/app/id1059812566" target="_blank">Updraft for Reddit</a></p>
+                  <p>
+                    It started as an experiment to reimagine how Reddit would look if it used Tinder-like cards for posts and swiping for upvoting/downvoting. From there it grew while I constantly tinkered with it and added new features. I wanted every part of the experience to be different, completely simple and easy to use. The design reflects that, using just two colors and hiding all the complexity at first glance.
+                  </p>
+                  <img class="updraft-image" src="img/pink.png">
+                  <img class="updraft-image" src="img/sunrise.png">
+                  <p>
+                    The feedback is overwhelmingly positive and, surprisingly, quite a few people have written to say that Updraft is their new main Reddit app. I'm listening to all constructive criticism and advice and I'm hard at work on new updates that will make Updraft even better than before.
+                  </p>
+                  <p>
+                    It's available for download in the App Store: <a href="https://itunes.apple.com/app/id1059812566" target="_blank">Updraft for Reddit</a>
+                  </p>
+
+
+              </div>          
+          </div>
+
+            <div class="post">
+              <h1 class="post-title"><a href="http://nickplesha.github.io/post/3dtouch.html">Add 3D touch quick actions to your Ionic app</a></h1>
+              <div class="post-content">
+                <p>Since the release of iPhone 6s and 6s plus last year, more and more users expect your app to have at least some sort of 3D touch support. A lot of the most popular apps have implemented the barest minimum: quick actions menu that opens when the app icon is deep pressed. Since you want your hybrid Ionic app to be able to fit in with the rest of the crowd let's see how we can achieve this really quickly and easily.</p>
+                <p>I wrote a wrapper for the Cordova 3D touch plugin that will allow us to just that with a few lines of code:
+                <a href="https://github.com/nickplesha/ng-cordova-3dtouch" target="_blank">ng-cordova-3dtouch</a> </p>
+                <p>
+                  To install the necessary plugins open up your console and use <br>
+                  <span class="code">bower install ng-cordova-3dtouch</span> <br>
+                  We also need the Cordova plugin <br>
+                  <span class="code">cordova plugin add cordova-plugin-3dtouch</span>
+                </p>
+              <p>
+                That's all we need. Now, include <span class="code">&lt;script src="lib/ngCordova-3dtouch/dist/3dtouch.js"&gt;&lt;/script&gt;</span> into your <span class="code">index.html</span> and add <span class="code">ngCordova.plugins.3dtouch</span> as a module dependency in your app.
+              </p>
+              <p>
+                Let's add the first quick action to our app:
+                <pre class="code">
+                  <code>
+angular.module('example', ['ionic', 'ngCordova.plugins.3dtouch'])
+
+  .run(function($ionicPlatform, $cordova3DTouch, $state) {
+      $ionicPlatform.ready(function() {
+
+          //Add a dynamic quick action with title "Saved" and a built-in "Favorite" icon
+          $cordova3DTouch.addQuickAction('saved', 'Saved', 'Favorite', null, null, function() {
+              //Navigate to target state when the quick action was pressed on home screen
+              $state.go('tab.saved');
+          });
+      }
+
+      });
+  })</code>
+                </pre>
+                That's all there is to it. The quick action will be available in the menu that pops up when the user deep presses on the app icon and tapping it will open up the app and take the user to the screen at state "tab.saved".
+              </p>
+              <p>Now, if the default available icons (<a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationShortcutIcon_Class/#//apple_ref/c/tdef/UIApplicationShortcutIconType" target="_blank">full list</a>) aren't to your liking or if you want to use your own then drag a single-color <span class="code">.png</span> image (atleast 35x35 pixels) to your <span class="code">Resources</span> folder in Xcode.</p>
+              <p>
+                Then, we'll use it like this:
+                <pre class="code">
+                  <code>
+angular.module('example', ['ionic', 'ngCordova.plugins.3dtouch'])
+
+.run(function($ionicPlatform, $cordova3DTouch, $state) {
+    $ionicPlatform.ready(function() {
+
+        //Add a dynamic quick action with title "Frontpage" and a custom 'customicon' icon
+        $cordova3DTouch.addQuickAction('frontpage', 'Frontpage', null, 'customicon', 'Latest posts', 
+          function() {
+            //Navigate to target state when the quick action was pressed on home screen
+            $state.go('tab.frontpage');
+        });
+    }
+
+    });
+})</code>
+                </pre>
+                And that's all you need to add quick actions to your Ionic app. Check <a href="https://github.com/nickplesha/ng-cordova-3dtouch" target="_blank">ng-cordova-3dtouch</a> for more detailed documentation,
+              </p>
+              </div>          
+          </div>
+
           <div class="post">
-              <h1 class="post-titlle">Floating labels the simplest way possible</h1>
+              <h1 class="post-title"><a href="http://nickplesha.github.io/post/floatinglabel.html">Floating labels with pure CSS</a></h1>
               <div class="post-content">
                    <p>Floating labels in input fields are a design pattern that is here to stay. <a href="http://www.google.com/design/spec/components/text-fields.html#text-fields-floating-labels" target="_blank">Google's Material design guidelines</a> contain a section describing how they fit in the new design. While this example may be Android-centric, floating labels offer some great usability benefits for user interaction with forms, especially on smaller mobile screens where there is little room to show labels all the time.</p>
                    <p>If you want to try them in your next responsive or mobile project, here's a way to use them without any Javascript whatsoever:</p>
@@ -62,28 +147,29 @@
 
                     <p>I've styled this example to look like Android to show how easy it is to make it look however you want.</p>
 
-                    <p>To break it down how this works: using the <span class="code">required</span> attribute on the input fields allows us to apply styling for the <span class="code">:validstate</span> when the input fields has content. Using a CSS transition we achieve the behaviour we need. We also add styling on <span class="code">:focus</span> to communicate to the user that the field is selected.</p>
+                    <p>To break it down how this works: using the <span class="code">required</span> attribute on the input fields allows us to apply styling for the <span class="code">:validstate</span> when the input fields has content. Using a CSS transition we achieve the behavior we need. We also add styling on <span class="code">:focus</span> to communicate to the user that the field is selected.</p>
 
                     <p>There are some truly <a href="http://blog.circleci.com/adaptive-placeholders/" target="_blank">awesome examples of floating labels</a> on the web that inspired me, with placeholders that move out of the way and feature nice animation, but I've opted for a much simpler approach mainly because of Chrome auto-fill. The problem is that when the browser fills the input field, the placeholder text doesn't move out of the way since the auto-fill doesn't behave the same way as manual input. This makes it hard to use for e.g. login forms.</p>
 
                     <p>Hopefully, this simple example helps you on your way to including floating labels in your project. To see many more examples, check out this blog post by Matt D. Smith that explains how he came up with the concept and has many links to great implementations: <a href="http://mattdsmith.com/float-label-pattern/" target="_blank">mattdsmith.com/float-label-pattern</a> </p>
               </div>          
           </div>
+
           <div class="post">
-              <h1 class="post-titlle">Robot malfunctions - some common problems with automated UI testing</h1>
+              <h1 class="post-title"><a href="http://nickplesha.github.io/post/robotselenium.html">Robot malfunctions - some common problems with automated UI testing</a></h1>
               <div class="post-content">
-                  <p>Here's a llitle list of problems I run into on a regular basis when working with Robot Framework for automated UI testing. Specifically, the Selenium2Library that uses Selenium and takes care of test execution in the browser. Finding solutions for these problems wasn't very easy so this might help some of you if you run into the same thing.</p>
+                  <p>Here's a little list of problems I run into on a regular basis when working with Robot Framework for automated UI testing. Specifically using Selenium for test execution in the browser. Finding solutions for these problems wasn't very easy so this might help some of you if you run into the same thing.</p>
                   <h2>Don't try to find the element - wait for it</h2>
                   <p>Dynamic, single-page web apps have a lot of content - tabs, modals, alerts - hidden from view waiting to be used. This can confuse Selenium as you'll see when it can find elements that you don't even see with <span class="code">Page Should Contain ${element}</span> or <span class="code">Wait Until Page Contains ${element}</span>. Instead wait until elements can be seen and interacted with, use <span class="code">Wait Until Element Is Visible ${element}</span>. This way you are certain that Selenium is seeing what you are seeing.</p>
                 <h2>StaleElementReference Exception - slow down</h2>
                     <p>This seems like a common issue affecting many people who try writing UI tests for websites with a lot of client-side scripting. One thing you have to have in mind is that the average user is a lot slower when e.g. filling out a form that Selenium which rushes through the page at a very quick pace not giving the interface enough time to properly respond. Using <span class="code">Set Selenium Speed 0.1</span> before the keywords that encounter this error should fix this issue.</p>
                 <h2>PhantomJS support</h2>
-                   <p>When running tests in PhantomJS you'll quickly realise it doesn't behave like you expected a browser would. There are some differences that we need to account for. For example, PhantomJS doesn't wait for the page to load fully before moving on with the test execution, this would explain why your tests are failing when you know they shouldn't. This is an easy fix as the advice is the same - wait until elements are visible before continuing. Also, support for PhantomJS is kinda buggy - resize the window and it should be OK, for some reason. </p>
+                   <p>When running tests in PhantomJS you'll quickly realize it doesn't behave like you expected a browser would. There are some differences that we need to account for. For example, PhantomJS doesn't wait for the page to load fully before moving on with the test execution, this would explain why your tests are failing when you know they shouldn't. This is an easy fix as the advice is the same - wait until elements are visible before continuing. Also, support for PhantomJS is kinda buggy - resize the window and it should be OK, for some reason. </p>
                 <p>That should be it, for now. It really is a fun framework for writing expressive, simple, easy to read tests and Selenium is neat tool, you just have to adapt to the modern web environment.  </p>
 
               </div>          
           </div>
-      </div>      
+      </div>    
   </div>
   <footer>
 

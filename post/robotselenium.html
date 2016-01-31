@@ -1,0 +1,96 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+       More info: h5bp.com/i/378 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Robot framework - common errors</title>
+  <meta name="description" content="A list of common errors with Robot Framework and Selenium">
+
+  <!-- Mobile viewport optimized: h5bp.com/viewport -->
+  <meta name="viewport" content="width=device-width">
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/entypo.css">
+  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
+
+  <!-- All JavaScript at the bottom, except this Modernizr build.
+       Modernizr enables HTML5 elements & feature detects for optimal performance.
+       Create your own custom Modernizr build: www.modernizr.com/download/ -->
+  <script src="../js/libs/modernizr-2.5.3.min.js"></script>
+</head>
+<body>
+  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+  <header>
+
+  </header>
+  <div role="main">
+      <div class="sidebar">
+          <div class="contact">
+              <h2>nikola pleša</h2>
+              <p class="description">I'm the developer behind <a href="https://itunes.apple.com/app/id1059812566" target="_blank">Updraft for Reddit</a>. <br>This is my blog with stuff I'm working on.</p>
+              
+              <div class="social">
+                <a href="mailto:nickplesha@gmail.com" class="email"></a>
+                <a href="http://www.linkedin.com/pub/nikola-ple%C5%A1a/91/6b2/301" target="_blank" class="linkedin"></a>
+                <a href="https://github.com/nickplesha" target="_blank" class="github"></a>
+              </div>
+          </div>
+      </div>
+      <div class="content">
+          <div class="post">
+              <h1 class="post-title">Robot malfunctions - some common problems with automated UI testing</h1>
+              <div class="post-content">
+                  <p>Here's a little list of problems I run into on a regular basis when working with Robot Framework for automated UI testing. Specifically using Selenium for test execution in the browser. Finding solutions for these problems wasn't very easy so this might help some of you if you run into the same thing.</p>
+                  <h2>Don't try to find the element - wait for it</h2>
+                  <p>Dynamic, single-page web apps have a lot of content - tabs, modals, alerts - hidden from view waiting to be used. This can confuse Selenium as you'll see when it can find elements that you don't even see with <span class="code">Page Should Contain ${element}</span> or <span class="code">Wait Until Page Contains ${element}</span>. Instead wait until elements can be seen and interacted with, use <span class="code">Wait Until Element Is Visible ${element}</span>. This way you are certain that Selenium is seeing what you are seeing.</p>
+                <h2>StaleElementReference Exception - slow down</h2>
+                    <p>This seems like a common issue affecting many people who try writing UI tests for websites with a lot of client-side scripting. One thing you have to have in mind is that the average user is a lot slower when e.g. filling out a form that Selenium which rushes through the page at a very quick pace not giving the interface enough time to properly respond. Using <span class="code">Set Selenium Speed 0.1</span> before the keywords that encounter this error should fix this issue.</p>
+                <h2>PhantomJS support</h2>
+                   <p>When running tests in PhantomJS you'll quickly realize it doesn't behave like you expected a browser would. There are some differences that we need to account for. For example, PhantomJS doesn't wait for the page to load fully before moving on with the test execution, this would explain why your tests are failing when you know they shouldn't. This is an easy fix as the advice is the same - wait until elements are visible before continuing. Also, support for PhantomJS is kinda buggy - resize the window and it should be OK, for some reason. </p>
+                <p>That should be it, for now. It really is a fun framework for writing expressive, simple, easy to read tests and Selenium is neat tool, you just have to adapt to the modern web environment.  </p>
+
+              </div>          
+          </div>
+      </div>      
+  </div>
+  <footer>
+
+  </footer>
+
+
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+
+  <!-- scripts concatenated and minified via build script -->
+  <script src="../js/plugins.js"></script>
+  <script src="../js/script.js"></script>
+  <!-- end scripts -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-55917238-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

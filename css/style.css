@@ -227,54 +227,63 @@ a {
 .main {
 }
 .sidebar {
-    width: 30%;
-    height: 100%;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    position: fixed;
+    width: 100%;
     background-color: #ebebeb;
     opacity: 0.65;
     font-family: Calibri, Candara, Segoe;
+    display: block;
+    font-size: 16px;
 }
 .sidebar .contact {
     width: 90%;
     margin: 0 auto;
-    padding-top: 150px;
+    padding: 50px 0 20px;
+    max-width: 300px;
+    text-align: center
 }
 .content {
-    width: 65%;
-    display: inline-block;
-    float: right;
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    max-width: 768px;
 }
 .post {
-    opacity: 0.8;
-    width:  80%;
-    font-family: Calibri, Candara, Segoe;
+    width:  100%;
+    font-family: 'Open Sans', sans-serif;
     color: #333;
-    font-size: 22px;
-    line-height: 1.7;
+    font-size: 18px;
+    line-height: 32px;
     border-bottom: 2px solid #ccc;
     margin-bottom: 20px;
     padding-bottom: 20px;
-    padding-top: 50px;
+    padding-top: 20px;
 }
 .post div {
     margin: 20px 0;
 }
 .post h1 {
-    font-family: Rockwell, Courier;
-    font-size: 28px;
+    font-family: Courier;
+    font-size: 26px;
+}
+.post h1 a {
+    color: #333;
+    font-size: 26px;
+    font-weight: 600;
 }
 .post h2 {
-    font-family: Rockwell, Courier;
+    font-family: Courier;
     font-size: 20px;
 }
 .post .code {
     font-family: Consolas, Monaco, "Courier New", Courier, monospace;
     background-color: #ebebeb;
     border: 1px solid #dedee3;
-    font-size: 16px;
+    font-size: 14px;
+    word-wrap: normal;
+}
+
+.updraft-image {
+  width: 300px;
 }
 
 .social a {

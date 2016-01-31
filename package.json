@@ -1,0 +1,14 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "My blog",
+  "main": "index.html",
+  "scripts": {
+  },
+  "author": "nickplesha",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.13.3",
+    "gulp-connect": "^2.2.0"
+  }
+}
