@@ -12,8 +12,8 @@
        More info: h5bp.com/i/378 -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>Robot framework - common errors</title>
-  <meta name="description" content="A list of common errors with Robot Framework and Selenium">
+  <title>Updraft for Reddit</title>
+  <meta name="description" content="Add 3d touch quick actions for iOS in Ionic Framework hybrid apps">
 
   <!-- Mobile viewport optimized: h5bp.com/viewport -->
   <meta name="viewport" content="width=device-width">
@@ -50,18 +50,15 @@
           </div>
       </div>
       <div class="content">
-          <div class="post">
-              <h1 class="post-title">Robot malfunctions - some common problems with automated UI testing</h1>
+            <div class="post">
+              <a href="http://nickplesha.github.io/">&#8592; Home</a>
+              <h1 class="post-title"><a href="http://nickplesha.github.io/post/mapillaryextension.html">Mapillary Chrome extension</a></h1>
               <div class="post-content">
-                  <p>Here's a little list of problems I run into on a regular basis when working with Robot Framework for automated UI testing. Specifically using Selenium for test execution in the browser. Finding solutions for these problems wasn't very easy so this might help some of you if you run into the same thing.</p>
-                  <h2>Don't try to find the element - wait for it</h2>
-                  <p>Dynamic, single-page web apps have a lot of content - tabs, modals, alerts - hidden from view waiting to be used. This can confuse Selenium as you'll see when it can find elements that you don't even see with <span class="code">Page Should Contain ${element}</span> or <span class="code">Wait Until Page Contains ${element}</span>. Instead wait until elements can be seen and interacted with, use <span class="code">Wait Until Element Is Visible ${element}</span>. This way you are certain that Selenium is seeing what you are seeing.</p>
-                <h2>StaleElementReference Exception - slow down</h2>
-                    <p>This seems like a common issue affecting many people who try writing UI tests for websites with a lot of client-side scripting. One thing you have to have in mind is that the average user is a lot slower when e.g. filling out a form that Selenium which rushes through the page at a very quick pace not giving the interface enough time to properly respond. Using <span class="code">Set Selenium Speed 0.1</span> before the keywords that encounter this error should fix this issue.</p>
-                <h2>PhantomJS support</h2>
-                   <p>When running tests in PhantomJS you'll quickly realize it doesn't behave like you expected a browser would. There are some differences that we need to account for. For example, PhantomJS doesn't wait for the page to load fully before moving on with the test execution, this would explain why your tests are failing when you know they shouldn't. This is an easy fix as the advice is the same - wait until elements are visible before continuing. Also, support for PhantomJS is kinda buggy - resize the window and it should be OK, for some reason. </p>
-                <p>That should be it, for now. It really is a fun framework for writing expressive, simple, easy to read tests and Selenium is neat tool, you just have to adapt to the modern web environment.  </p>
-
+                <p>Mapillary is a street-level imagery platform powered by collaboration and computer vision. It's also the team I've been a part of for the past year.</p>
+                <p>One tiny project I made before joining Mapillary was a Chrome browser extension that showcases amazing images on Mapillary that were uploaded by users. You can find it at the <a href="https://chrome.google.com/webstore/detail/mapillary-%E2%80%93-crowdsourced/lkokbfpnhgcnkhecedjgdemlohbaomjd">Chrome web store</a>.</p>
+                <p>It lets you see an awesome image every time you open a new tab and you can start exploring from there.</p>
+                <p>I've been updating it over the past year, adding fresh images and tweaking and simplifying it for a smoother experience. You can see the source code in the <a href="https://github.com/mapillary/mapillary-chrome-extension">mapillary-chrome-extension</a> repository and use it as a starting point for your new browser extension.</p>
+                <img width="100%" height="auto" src="../img/alps.jpg">
               </div>          
           </div>
       </div>      

@@ -51,7 +51,6 @@ body { margin: 0; font-size: 1em; line-height: 1.4; }
    ========================================================================== */
 
 a { color: #00e; }
-a:visited { color: #551a8b; }
 a:hover { color: #06e; }
 a:focus { outline: thin dotted; }
 
@@ -81,7 +80,7 @@ mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
 pre, code, kbd, samp { font-family: monospace, serif; _font-family: 'courier new', monospace; font-size: 1em; }
 
 /* Improve readability of pre-formatted text in all browsers */
-pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: auto; width: 100%; }
 
 q { quotes: none; }
 q:before, q:after { content: ""; content: none; }
@@ -224,22 +223,28 @@ a {
     font-weight: 500;
 }
 
-.main {
+body {
+    font-family: 'Open Sans', sans-serif;
 }
 .sidebar {
     width: 100%;
-    background-color: #ebebeb;
-    opacity: 0.65;
-    font-family: Calibri, Candara, Segoe;
+    background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+    opacity: 0.8;
     display: block;
-    font-size: 16px;
+    font-size: 14px;
 }
 .sidebar .contact {
     width: 90%;
     margin: 0 auto;
-    padding: 50px 0 20px;
+    padding: 40px 0;
     max-width: 300px;
     text-align: center
+}
+.sidebar .description {
+    line-height: 26px;
+}
+.sidebar .name {
+    font-family: Consolas, Monaco, "Courier New", Courier, monospace;
 }
 .content {
     width: 90%;
@@ -249,21 +254,19 @@ a {
 }
 .post {
     width:  100%;
-    font-family: 'Open Sans', sans-serif;
     color: #333;
     font-size: 18px;
     line-height: 32px;
     border-bottom: 2px solid #ccc;
     margin-bottom: 20px;
-    padding-bottom: 20px;
-    padding-top: 20px;
+    padding-bottom: 40px;
+    padding-top: 40px;
 }
 .post div {
     margin: 20px 0;
 }
 .post h1 {
-    font-family: Courier;
-    font-size: 26px;
+    font-size: 24px;
 }
 .post h1 a {
     color: #333;
@@ -276,9 +279,11 @@ a {
 }
 .post .code {
     font-family: Consolas, Monaco, "Courier New", Courier, monospace;
+    font-size: 14px;    
     background-color: #ebebeb;
     border: 1px solid #dedee3;
-    font-size: 14px;
+    border-radius: 4px;
+    padding: 10px;
     word-wrap: normal;
 }
 
@@ -323,6 +328,12 @@ a {
 .email, .email:before {
   background: #fa5432;
   content: "\2709";
+}
+
+footer {
+    font-size: 12px;
+    padding: 40px 0;
+    text-align: center;
 }
 
 
