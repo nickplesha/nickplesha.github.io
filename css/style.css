@@ -243,9 +243,6 @@ body {
 .sidebar .description {
     line-height: 26px;
 }
-.sidebar .name {
-    font-family: Consolas, Monaco, "Courier New", Courier, monospace;
-}
 .content {
     width: 90%;
     display: block;
@@ -255,7 +252,7 @@ body {
 .post {
     width:  100%;
     color: #333;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 32px;
     border-bottom: 2px solid #ccc;
     margin-bottom: 20px;
@@ -283,7 +280,7 @@ body {
     background-color: #ebebeb;
     border: 1px solid #dedee3;
     border-radius: 4px;
-    padding: 10px;
+    padding: 8px;
     word-wrap: normal;
 }
 
@@ -292,40 +289,36 @@ body {
 }
 
 .social a {
-  font-family: 'entypo';
-  speak: none;
-  font-style: normal;
-  font-weight: 400;
-  font-variant: normal;
   font-size: 1.5em;
   text-transform: none;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: .5em;
-  margin: .5em 0;
+  margin: .5em .1em;
   color: white;
   text-decoration: none;
   border-radius: 50%;
-  width: 25px;
-  height: 25px;
+  width: 40px;
+  height: 40px;
   text-align: center;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   -webkit-transition: 0.5s opacity;
   transition: 0.5s opacity;
 }
 .social a:hover {
     opacity: 0.8;
 }
-.linkedin, .linkedin:before {
+.ln, .ln:before {
   background: #0087be;
   content: "\F318";
 }
-.github, .github:before {
+.gh, .gh:before {
   background: #333;
   content: "\F300";
 }
-.email, .email:before {
+.mail, .mail:before {
   background: #fa5432;
   content: "\2709";
 }

@@ -6,52 +6,38 @@
 <!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
+    <meta charset="utf-8">
 
-  <!-- Use the .htaccess and remove these lines to avoid edge case issues.
-       More info: h5bp.com/i/378 -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>CSS floating label</title>
-  <meta name="description" content="Floating labels for input fields built with pure CSS">
-
-  <!-- Mobile viewport optimized: h5bp.com/viewport -->
-  <meta name="viewport" content="width=device-width">
-
-  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
-
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/entypo.css">
-  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
-
-  <!-- All JavaScript at the bottom, except this Modernizr build.
-       Modernizr enables HTML5 elements & feature detects for optimal performance.
-       Create your own custom Modernizr build: www.modernizr.com/download/ -->
-  <script src="../js/libs/modernizr-2.5.3.min.js"></script>
+    <title>CSS floating label</title>
+    <meta name="description" content="Floating labels for input fields built with pure CSS">
+  
+    <meta name="viewport" content="width=device-width">
+  
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/ionicons.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
 </head>
-<body>
-  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
-       chromium.org/developers/how-tos/chrome-frame-getting-started -->
-  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
-  <header>
+<body><header>
 
   </header>
   <div role="main">
       <div class="sidebar">
           <div class="contact">
               <h2 class="name">nikola pleša</h2>
-              <p class="description">I'm the developer behind <a href="https://itunes.apple.com/app/id1059812566" target="_blank">Updraft for Reddit</a>. <br>This is my blog with stuff I'm working on.</p>
+              <p class="description">I'm a developer at <a href="https://www.mapillary.com/" target="_blank">Mapillary</a> <br>This is my blog with stuff I'm working on.</p>
               
               <div class="social">
-                <a href="mailto:nickplesha@gmail.com" class="email"></a>
-                <a href="http://www.linkedin.com/pub/nikola-ple%C5%A1a/91/6b2/301" target="_blank" class="linkedin"></a>
-                <a href="https://github.com/nickplesha" target="_blank" class="github"></a>
+                <a href="mailto:nickplesha@gmail.com" class="mail ion-email"></a>
+                <a href="http://www.linkedin.com/pub/nikola-ple%C5%A1a/91/6b2/301" target="_blank" class="ln ion-social-linkedin"></a>
+                <a href="https://github.com/nickplesha" target="_blank" class="gh ion-social-github"></a>
               </div>
           </div>
       </div>
       <div class="content">
           <div class="post">
-            <a href="http://nickplesha.github.io/">&#8592; Home</a>
+            <a href="http://nickplesha.github.io/"><span class="ion-ios-arrow-back" style="margin-right:4px"></span> Home</a>
               <h1 class="post-title">Floating labels with pure CSS</h1>
               <div class="post-content">
                    <p>Floating labels in input fields are a design pattern that is here to stay. <a href="http://www.google.com/design/spec/components/text-fields.html#text-fields-floating-labels" target="_blank">Google's Material design guidelines</a> contain a section describing how they fit in the new design. While this example may be Android-centric, floating labels offer some great usability benefits for user interaction with forms, especially on smaller mobile screens where there is little room to show labels all the time.</p>
@@ -75,18 +61,6 @@
   <footer>
 
   </footer>
-
-
-  <!-- JavaScript at the bottom for fast page loading -->
-
-  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
-
-  <!-- scripts concatenated and minified via build script -->
-  <script src="../js/plugins.js"></script>
-  <script src="../js/script.js"></script>
-  <!-- end scripts -->
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
