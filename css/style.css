@@ -280,7 +280,7 @@ body {
     background-color: #ebebeb;
     border: 1px solid #dedee3;
     border-radius: 4px;
-    padding: 8px;
+    padding: 10px;
     word-wrap: normal;
 }
 
@@ -293,7 +293,7 @@ body {
   text-transform: none;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; 
   margin: .5em .1em;
   color: white;
   text-decoration: none;
@@ -312,15 +312,12 @@ body {
 }
 .ln, .ln:before {
   background: #0087be;
-  content: "\F318";
 }
 .gh, .gh:before {
   background: #333;
-  content: "\F300";
 }
 .mail, .mail:before {
   background: #fa5432;
-  content: "\2709";
 }
 
 footer {
