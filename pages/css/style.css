@@ -280,7 +280,7 @@ body {
     background-color: #ebebeb;
     border: 1px solid #dedee3;
     border-radius: 4px;
-    padding: 8px;
+    padding: 10px;
     word-wrap: normal;
 }
 
@@ -289,36 +289,40 @@ body {
 }
 
 .social a {
+  font-family: 'entypo';
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
   font-size: 1.5em;
   text-transform: none;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin: .5em .1em;
+  padding: .5em;
+  margin: .5em 0;
   color: white;
   text-decoration: none;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 25px;
+  height: 25px;
   text-align: center;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-block;
   -webkit-transition: 0.5s opacity;
   transition: 0.5s opacity;
 }
 .social a:hover {
     opacity: 0.8;
 }
-.ln, .ln:before {
+.linkedin, .linkedin:before {
   background: #0087be;
   content: "\F318";
 }
-.gh, .gh:before {
+.github, .github:before {
   background: #333;
   content: "\F300";
 }
-.mail, .mail:before {
+.email, .email:before {
   background: #fa5432;
   content: "\2709";
 }

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Floating labels with pure CSS</title>
+  <meta name="description" content="Floating labels for input fields built with pure CSS">
+
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/entypo.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <div role="main">
+      <div class="sidebar">
+          <div class="contact">
+              <h2 class="name">Nikola Pleša</h2>
+              <p class="description">I'm a developer at <a href="https://www.mapillary.com" target="_blank">Mapillary</a> <br>This is my blog with stuff I'm working on.</p>
+              
+              <div class="social">
+                <a href="mailto:nickplesha@gmail.com" class="email"></a>
+                <a href="http://www.linkedin.com/pub/nikola-ple%C5%A1a/91/6b2/301" target="_blank" class="linkedin"></a>
+                <a href="https://github.com/nickplesha" target="_blank" class="github"></a>
+              </div>
+          </div>
+      </div>
+      <div class="content">
+        <div class="post">
+          
+<h1 class="post-title">Floating labels with pure CSS</h1>
+<div class="post-content">
+    <p>Floating labels in input fields are a design pattern that is here to stay. <a href="http://www.google.com/design/spec/components/text-fields.html#text-fields-floating-labels" target="_blank">Google's Material design guidelines</a> contain a section describing how they fit in the new design. While this example may be Android-centric, floating labels offer some great usability benefits for user interaction with forms, especially on smaller mobile screens where there is little room to show labels all the time.</p>
+    <p>If you want to try them in your next responsive or mobile project, here's a way to use them without any Javascript whatsoever:</p>
+
+    <p data-height="268" data-theme-id="0" data-slug-hash="neyCp" data-default-tab="result" data-user="nickplesha" class='codepen'>See the Pen <a href='http://codepen.io/nickplesha/pen/neyCp/'>neyCp</a> by Nikola (<a href='http://codepen.io/nickplesha'>@nickplesha</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+    <script async src="//codepen.io/assets/embed/ei.js"></script>
+
+
+    <p>I've styled this example to look like Android to show how easy it is to make it look however you want.</p>
+
+    <p>To break it down how this works: using the <span class="code">required</span> attribute on the input fields allows us to apply styling for the <span class="code">:validstate</span> when the input fields has content. Using a CSS transition we achieve the behavior we need. We also add styling on <span class="code">:focus</span> to communicate to the user that the field is selected.</p>
+
+    <p>There are some truly <a href="http://blog.circleci.com/adaptive-placeholders/" target="_blank">awesome examples of floating labels</a> on the web that inspired me, with placeholders that move out of the way and feature nice animation, but I've opted for a much simpler approach mainly because of Chrome auto-fill. The problem is that when the browser fills the input field, the placeholder text doesn't move out of the way since the auto-fill doesn't behave the same way as manual input. This makes it hard to use for e.g. login forms.</p>
+
+    <p>Hopefully, this simple example helps you on your way to including floating labels in your project. To see many more examples, check out this blog post by Matt D. Smith that explains how he came up with the concept and has many links to great implementations: <a href="http://mattdsmith.com/float-label-pattern/" target="_blank">mattdsmith.com/float-label-pattern</a> </p>
+</div>  
+        </div>
+        <a href="/">&#8592; Other posts</a> 
+      </div>    
+  </div>
+
+<footer>
+    <div>© 2019 Nikola Pleša</div>
+</footer>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-55917238-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

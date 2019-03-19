@@ -1,0 +1,67 @@
+---
+layout: layout.njk
+title: 3d touch in Ionic
+description: Add 3d touch quick actions for iOS in Ionic Framework hybrid apps
+tags: post
+---
+
+            <h1 class="post-title">Add 3D touch quick actions to your Ionic app</h1>
+            <div class="post-content">
+              <p>Since the release of iPhone 6s and 6s plus last year, more and more users expect your app to have at least some sort of 3D touch support. A lot of the most popular apps have implemented the barest minimum: quick actions menu that opens when the app icon is deep pressed. Since you want your hybrid Ionic app to be able to fit in with the rest of the crowd let's see how we can achieve this really quickly and easily.</p>
+              <p>I wrote a wrapper for the Cordova 3D touch plugin that will allow us to just that with a few lines of code:
+              <a href="https://github.com/nickplesha/ng-cordova-3dtouch" target="_blank">ng-cordova-3dtouch</a> </p>
+              <p>
+                To install the necessary plugins open up your console and use <br>
+                <span class="code">bower install ng-cordova-3dtouch</span> <br>
+                We also need the Cordova plugin <br>
+                <span class="code">cordova plugin add cordova-plugin-3dtouch</span>
+              </p>
+            <p>
+              That's all we need. Now, include <span class="code">&lt;script src="lib/ngCordova-3dtouch/dist/3dtouch.js"&gt;&lt;/script&gt;</span> into your <span class="code">index.html</span> and add <span class="code">ngCordova.plugins.3dtouch</span> as a module dependency in your app.
+            </p>
+            <p>
+              Let's add the first quick action to our app:
+              <pre class="code">
+                <code>
+angular.module('example', ['ionic', 'ngCordova.plugins.3dtouch'])
+
+.run(function($ionicPlatform, $cordova3DTouch, $state) {
+    $ionicPlatform.ready(function() {
+
+        //Add a dynamic quick action with title "Saved" and a built-in "Favorite" icon
+        $cordova3DTouch.addQuickAction('saved', 'Saved', 'Favorite', null, null, function() {
+            //Navigate to target state when the quick action was pressed on home screen
+            $state.go('tab.saved');
+        });
+    }
+
+    });
+})</code>
+              </pre>
+              That's all there is to it. The quick action will be available in the menu that pops up when the user deep presses on the app icon and tapping it will open up the app and take the user to the screen at state "tab.saved".
+            </p>
+            <p>Now, if the default available icons (<a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationShortcutIcon_Class/#//apple_ref/c/tdef/UIApplicationShortcutIconType" target="_blank">full list</a>) aren't to your liking or if you want to use your own then drag a single-color <span class="code">.png</span> image (atleast 35x35 pixels) to your <span class="code">Resources</span> folder in Xcode.</p>
+            <p>
+              Then, we'll use it like this:
+              <pre class="code">
+                <code>
+angular.module('example', ['ionic', 'ngCordova.plugins.3dtouch'])
+
+.run(function($ionicPlatform, $cordova3DTouch, $state) {
+  $ionicPlatform.ready(function() {
+
+      //Add a dynamic quick action with title "Frontpage" and a custom 'customicon' icon
+      $cordova3DTouch.addQuickAction('frontpage', 'Frontpage', null, 'customicon', 'Latest posts', 
+        function() {
+          //Navigate to target state when the quick action was pressed on home screen
+          $state.go('tab.frontpage');
+      });
+  }
+
+  });
+})</code>
+              </pre>
+              And that's all you need to add quick actions to your Ionic app. Check <a href="https://github.com/nickplesha/ng-cordova-3dtouch" target="_blank">ng-cordova-3dtouch</a> for more detailed documentation,
+            </p>
+            </div>          
+        
